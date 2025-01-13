@@ -39,6 +39,8 @@ class SolarEclipse
     /** @var Location */
     private $location;
 
+    public float $lat;
+    public float $lon;
 
     private function __construct(BesselianElements $besselianElements)
     {
@@ -48,7 +50,7 @@ class SolarEclipse
         $this->location = Location::create();
     }
 
-    public static function create(TimeOfInterest $toi, Location $location = null): self
+    public static function create(TimeOfInterest $toi, ?Location $location = null): self
     {
         // Generate filename for besselian elements
         $fileName = GeneralUtil::year2string($toi->getYear())
@@ -95,7 +97,7 @@ class SolarEclipse
         return Location::create($lat, $lon);
     }
 
-    public function getTimeOfInterest(SolarEclipseCircumstances $circumstances = null): TimeOfInterest
+    public function getTimeOfInterest(?SolarEclipseCircumstances $circumstances = null): TimeOfInterest
     {
         if (!isset($circumstances)) {
             $circumstances = $this->getCircumstancesMax();
@@ -125,7 +127,7 @@ class SolarEclipse
         return TimeOfInterest::createFromJulianDay($JD);
     }
 
-    public function getEclipseType(SolarEclipseCircumstances $circumstances = null): string
+    public function getEclipseType(?SolarEclipseCircumstances $circumstances = null): string
     {
         if (!isset($circumstances)) {
             $circumstances = $this->getCircumstancesMax();
@@ -228,7 +230,7 @@ class SolarEclipse
         return $this->hours2seconds($duration);
     }
 
-    public function getObscuration(SolarEclipseCircumstances $circumstances = null): float
+    public function getObscuration(?SolarEclipseCircumstances $circumstances = null): float
     {
         if (!isset($circumstances)) {
             $circumstances = $this->getCircumstancesMax();

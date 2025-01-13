@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8.0",
+        "php": "^8.2",
         "ext-json": "*"
     },
     "autoload": {
@@ -23,7 +23,7 @@
         }
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.1",
-        "phpunit/phpunit": "^8"
+        "symfony/phpunit-bridge": "*",
+        "phpunit/phpunit": "^9"
     }
 }

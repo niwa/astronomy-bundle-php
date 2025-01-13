@@ -11,7 +11,7 @@ use Andrmoel\AstronomyBundle\TimeOfInterest;
 
 interface AstronomicalObjectInterface
 {
-    public static function create(TimeOfInterest $toi = null);
+    public static function create(?TimeOfInterest $toi = null);
 
     public function setTimeOfInterest(TimeOfInterest $toi): void;
 

@@ -4,7 +4,7 @@ namespace Andrmoel\AstronomyBundle\Parsers;
 
 class ParserFactory
 {
-    public static function get(string $className, string $data): AbstractParser
+    public static function get(string $className, string $data): ?AbstractParser
     {
         if (class_exists($className)) {
             /** @var AbstractParser $parser */

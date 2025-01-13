@@ -17,7 +17,7 @@ use Andrmoel\AstronomyBundle\Utils\DistanceUtil;
 
 class Moon extends AstronomicalObject implements AstronomicalObjectInterface
 {
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

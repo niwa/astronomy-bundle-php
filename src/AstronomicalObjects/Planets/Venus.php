@@ -11,7 +11,7 @@ class Venus extends Planet
     protected $VSOP87_SPHERICAL = VenusSphericalVSOP87::class;
     protected $VSOP87_RECTANGULAR = VenusRectangularVSOP87::class;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

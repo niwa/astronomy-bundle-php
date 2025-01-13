@@ -36,7 +36,7 @@ class TimeOfInterest
     /** @var Time */
     private $time;
 
-    private function __construct(Time $time = null)
+    private function __construct(?Time $time = null)
     {
         $this->time = $time ? $time : new Time();
     }
