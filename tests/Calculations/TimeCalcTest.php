@@ -7,6 +7,8 @@ use Andrmoel\AstronomyBundle\Entities\Time;
 use Andrmoel\AstronomyBundle\TimeOfInterest;
 use Andrmoel\AstronomyBundle\Utils\AngleUtil;
 use PHPUnit\Framework\TestCase;
+use DateInterval;
+use DateTime;
 
 class TimeCalcTest extends TestCase
 {
@@ -121,7 +123,7 @@ class TimeCalcTest extends TestCase
 
         $T = TimeCalc::julianDay2julianCenturiesJ2000($JD);
 
-        $this->assertEquals(-0.127296372348, $T);
+        $this->assertEqualsWithDelta(-0.127296372348, $T, 0.000000000001);
     }
 
     /**
@@ -147,7 +149,7 @@ class TimeCalcTest extends TestCase
 
         $t = TimeCalc::julianDay2julianMillenniaJ2000($JD);
 
-        $this->assertEquals(-0.0127296372348, $t);
+        $this->assertEqualsWithDelta(-0.0127296372348, $t, 0.000000000001);
     }
 
     /**
@@ -306,7 +308,7 @@ class TimeCalcTest extends TestCase
      */
     public function getDayOfYearTest()
     {
-        $dateTime = new \DateTime('2001-01-01');
+        $dateTime = new DateTime('2001-01-01');
 
         for ($expectedDayOfYear = 1; $expectedDayOfYear <= 365; $expectedDayOfYear++) {
             $time = new Time(
@@ -318,7 +320,7 @@ class TimeCalcTest extends TestCase
 
             $this->assertEquals($expectedDayOfYear, $dayOfYear);
 
-            $dateTime->add(new \DateInterval('P1D'));
+            $dateTime->add(new DateInterval('P1D'));
         }
     }
 

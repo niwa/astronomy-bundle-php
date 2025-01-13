@@ -48,7 +48,7 @@ class AngleUtilTest extends TestCase
         $this->assertEquals(12.5, AngleUtil::normalizeAngle(12.5));
         $this->assertEquals(359.0, AngleUtil::normalizeAngle(359.0));
         $this->assertEquals(0.0, AngleUtil::normalizeAngle(360.0));
-        $this->assertEquals(204.30, AngleUtil::normalizeAngle(5964.30));
+        $this->assertEqualsWithDelta(204.30, AngleUtil::normalizeAngle(5964.30), 0.001);
         $this->assertEquals(315.0, AngleUtil::normalizeAngle(-45.0));
         $this->assertEquals(79.0, AngleUtil::normalizeAngle(259.0, 180.0));
     }

@@ -12,7 +12,7 @@ class Time
     public $second = 0;
 
     public function __construct(
-        int $year = null,
+        ?int $year = null,
         int $month = 0,
         int $day = 0,
         int $hour = 0,

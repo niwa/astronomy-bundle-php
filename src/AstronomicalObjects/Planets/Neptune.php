@@ -11,7 +11,7 @@ class Neptune extends Planet
     protected $VSOP87_SPHERICAL = NeptuneSphericalVSOP87::class;
     protected $VSOP87_RECTANGULAR = NeptuneRectangularVSOP87::class;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

@@ -23,7 +23,7 @@ class Sun extends AstronomicalObject implements AstronomicalObjectInterface
     const TWILIGHT_ASTRONOMICAL = 3;
     const TWILIGHT_NIGHT = 4;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

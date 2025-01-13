@@ -11,7 +11,7 @@ class Mars extends Planet
     protected $VSOP87_SPHERICAL = MarsSphericalVSOP87::class;
     protected $VSOP87_RECTANGULAR = MarsRectangularVSOP87::class;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

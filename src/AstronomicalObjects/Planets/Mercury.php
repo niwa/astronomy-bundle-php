@@ -11,7 +11,7 @@ class Mercury extends Planet
     protected $VSOP87_SPHERICAL = MercurySphericalVSOP87::class;
     protected $VSOP87_RECTANGULAR = MercuryRectangularVSOP87::class;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }

@@ -15,7 +15,7 @@ class Earth extends Planet
     protected $VSOP87_SPHERICAL = EarthSphericalVSOP87::class;
     protected $VSOP87_RECTANGULAR = EarthRectangularVSOP87::class;
 
-    public static function create(TimeOfInterest $toi = null): self
+    public static function create(?TimeOfInterest $toi = null): self
     {
         return new self($toi);
     }
